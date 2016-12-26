@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace DotNetTicketing.Models
 {
     public class User
     {
-        public int ID { get; set; }
+        public int UserId { get; set; }
 
         public string FirstName { get; set; }
 
@@ -19,8 +20,12 @@ namespace DotNetTicketing.Models
 
         public string CelNumber { get; set; }
 
-        public string ResponsibleID { get; set; }
+        public int ResponsibleId { get; set; }
 
-        public string RoleID { get; set; }
+        public int RoleID { get; set; }
+
+        public virtual User Responsible { get; set; }
+
+        public virtual Role Role { get; set; }
     }
 }
